@@ -1,7 +1,15 @@
-<h1><%= @brand %></h1>
+  <h1><%= @brand %></h1>
 
-<ul>
-  <% @tweets.each do |tweet| %>
-  <li><% tweet.message %></li>
-  <% end %>
-</ul>
+  <div class="tweet-wrapper">
+    <% @tweets.each do |tweet| %>
+    <% tweet.message %>
+    <p class="tweet">
+      <span>
+        <%= tweet.message %>
+      </span>
+      <%#t. tweet.created_at.strftime('%A - %B') %>
+      <%= time_ago_in_words(tweet.created_at) %>
+    </p>
+    <span>
+
+    <% end %>
